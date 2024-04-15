@@ -1,0 +1,172 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.cuadro {
+    border: 2px solid #0f0f0f;
+    padding: 50px; /* Ajusta este valor según sea necesario */
+    text-align: center;
+    width: 30wh; 
+    height: 98vh; 
+    position: relative;
+    border-radius: 15px; /* Añadido para bordes circulares */
+}
+
+.cuadro h3 {
+    margin: 0;
+    font-size: 25px;
+
+}
+
+.cuadro p {
+    margin: 10px 5;
+    text-align: left; /* Alinea el texto a la derecha */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.cuadro .caracteristicas {
+    list-style-type: none;
+    padding: 0;
+}
+.cuadro .caracteristicas li::before {
+    content: '\2713'; /* Código Unicode del visto (✓) */
+    font-size: 25px;
+    color: #fff; /* Color del texto dentro del círculo */
+    background-color: #36dbd9; /* Color del círculo rojo */
+    border-radius: 50%; /* Hace el círculo */
+    padding: 5px; /* Espaciado interno del círculo */
+    margin-right: 5px; /* Ajusta el espacio entre el círculo y el texto */
+}
+.cuadro .caracteristicas .advierte {
+    position: relative;
+    padding-left: 40px; /* Ajusta este valor según sea necesario para la distancia del símbolo */
+}
+
+.cuadro .caracteristicas .advierte::before {
+    content: '\0021'; /* Código Unicode del símbolo de advertencia ⚠ */
+    font-size: 25px;
+    color: #fafdfb; /* Color del símbolo de advertencia */
+    position: absolute;
+    background-color: #FF391E; /* Color del círculo rojo */
+    width: 20px; /* Ajusta el tamaño del círculo según sea necesario */
+    height: 20px; /* Ajusta el tamaño del círculo según sea necesario */
+    border-radius: 50%; /* Hace que el círculo sea redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    margin-right: 8px;
+}
+
+
+.cuadro .caracteristicas li {
+    margin: 10px;
+    text-align: left; /* Alinea el texto a la derecha */  
+    margin-bottom: 4px;
+}
+
+.cuadro .precio {
+    color: #5c69e2;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    position: absolute;
+    bottom: 70px; /* Más arriba */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cuadro .precio .mas-detalles {
+    text-decoration: underline;
+    color: #5c69e2;
+    cursor: pointer;
+}
+
+.cuadro .precio .mas-detalles1 {
+    text-decoration: underline;
+    color: #f9f9f9;
+    cursor: pointer;
+}
+
+.cuadro .precio .mas-detalles:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cuadro button {
+    border: 2px solid #0f0f0f;
+    border-radius: 15px;
+    color: #36dbd9;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 10px auto;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 50px; /* Ajusta el valor según sea necesario */
+    border-radius: 10px;
+    position: relative;
+    width: 50%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Estilo adicional para la línea horizontal */
+.linea-horizontal {
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.columna {
+    width: 48%;
+    /* Ajusta según sea necesario */
+    /*border: 1px solid #ddd;*/
+    /* Solo para visualización */
+    padding: 10px;
+}
+
+.contenido-buenas {
+    display: flex;
+    align-items: center;
+}

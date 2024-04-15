@@ -1,0 +1,49 @@
+{% extends "master.html" %}
+<!DOCTYPE html>
+{% load static %}
+
+{% block head %}
+<title>Document</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/select_fly.css' %}">
+{% endblock head %}
+
+{% block body %}
+<body >
+
+    {% if flights %}
+        {% for flight in flights %}
+        <div class="container" id="flight-{{ flight.id }}">
+            <div class="row row-flight-opt gy-1">
+                <div class="group-11-kYR px-0">
+                    <div class="opt_origin">
+                        <div class="flight-origin-time">{{ flight.depart_time|time:"g:i a" }}</div>
+                        <div class="flight-origin-city">{{ flight.origin.code}}</div>
+                    </div>
+
+                    <img class="auto-group-64xy-LF3" src="./img/auto-group-64xy.png"/>
+                    <div class="opt_destination">
+                        <div class="city_dest">
+                            <div class="flight-destination-city">{{ flight.destination.city }}</div>
+                            <div class="flight-destination-time">{{ flight.arrival_time|date:"h:i a" }}</div>
+                        </div>
+
+                        <div class="flight-price">
+                            <div class="flight-price-from">Desde</div>
+                            <div class="div-flight-cop">
+                                <div class="flight-cop-label">COP</div>
+                                <div class="flight-cop-price">{{ flight.price }}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No se encontraron vuelos para la búsqueda especificada.</p>
+    {% endif %}
+    <script type="text/javascript" src="{% static 'js/select_fly.js' %}"></script>
+
+</body>
+{% endblock %}

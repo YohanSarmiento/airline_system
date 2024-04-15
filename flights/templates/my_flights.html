@@ -1,0 +1,55 @@
+{% extends "master.html" %}
+<!DOCTYPE html>
+{% load static %}
+
+{% block head %}
+<head>
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(32vh, 1fr));
+            gap: 10px;
+        }
+        
+        .card{
+            border: 2px rgb(35, 32, 211) solid;      
+            text-align: center;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.10);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 20px;
+            border-radius: 10px;
+            height: 50vh;
+            width: 30vh;
+        }
+        .card h2{
+            padding: 10px;
+        }
+    </style>
+</head>
+{% endblock head %}
+
+{% block body %}
+<body>
+
+    <div class="container">
+        {% if tickets %}
+            {% for ticket in tickets %}
+                <div class="card">
+                    <h2>Ref_No: {{ ticket.ref_no }}</h2>
+                    {% for passenger in ticket.passengers.all %}
+                        <h3>Pasajero: {{ passenger.name }} {{ passenger.last }} - {{ passenger.gender }}</h3>
+                    {% endfor %}
+                    <h3>Vuelo: De {{ ticket.flight.origin.code }} a {{ ticket.flight.destination.code }}</h3>
+                    <h3>Avion: {{ ticket.flight.plane }}</h3>
+                    <h3>Aciento: {{ ticket.seat_number }}</h3>
+                    <h3>Equipaje: {{ ticket.fare}}</h3>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No tienes vuelos registrados :,c</p>
+        {% endif %}
+    </div>
+</body>
+{% endblock %}
