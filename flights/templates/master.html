@@ -8,11 +8,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <!-- <link rel="shortcut icon" href="#"> -->
+    
     {% block head %}
+
     {% endblock %}
 </head>
+<div class="row gy-1 bg-warning" style="height: 30px;"> <!-- manually change gutter using g{d}-{n} -->
+  <div class="col-sm-4 col-lg-12 ">
+    <p class="text-center fs-6">Sitio web de prueba no entrar datos personales - test web site don't enter personal data</p>
+  </div>
+</div>
 <body >
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg "> <!-- bg-body-tertiary -->
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}">Flights</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,11 +60,13 @@
             </form>
           </div>
         </div>
+        </div>
     </nav>
-
     <div>
         <!-- <br> -->
+
         {% block body %}
+
 
         {% endblock %}
     </div>
