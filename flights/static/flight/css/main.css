@@ -4,7 +4,7 @@
 .bg-gray{background-color: #ffffff;}
 .btn-gray{background-color: #dddde5;}
 .fs-8{font-size: 12px;}
-.flightImg{
+.flight-img{
     margin-top: 0px;
     padding-top: opx;
     background: url("/static/flight/images/beach.jpg") 50% 0 no-repeat fixed; 

@@ -12,103 +12,111 @@
 
 <!-- FLIGHT/BEGIN -->
 <!-- LG/MD -->
-<div class="flightImg d-none d-md-flex d-xl-flex flex-column">
-    <!-- <h1 class="text-write fw-bold" style="font-size: 55px; padding: 7% 0 2% 16%;">Let the journey begin</h1> -->
-    <div class="container-fluid " style="padding-bottom: 22%;">
-        <div class="row p-5">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8 bg-white p-4 rounded-1 border-3 shadow-lg">
-                <div class="search-panel d-flex flex-column">
-                    <!-- RADIO BUTTONS -->
-                    <div class="d-flex align-items-center text-black fw-bold">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
-                                checked>
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Ida y vuelta
-                            </label>
+<div class="container-fluid flight-img vh-100">
+    <div class="row justify-content-center">
+        <!-- <h1 class="text-write fw-bold" style="font-size: 55px; padding: 7% 0 2% 16%;">Let the journey begin</h1> -->
+    
+        <div class="col-sm-12 col-md-10 col-lg-8 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <!-- RADIO BUTTONS -->
+                        <div class="d-flex text-black fw-bold">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Ida y vuelta
+                                </label>
+                            </div>
+                            <div class="form-check mx-4">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Solo ida
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check mx-4">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Solo ida
-                            </label>
-                        </div>
+                        <!-- RADIO BUTTONS END -->
                     </div>
-                    <!-- RADIO BUTTONS END -->
+                        <!-- INPUT FIELDS -->
 
-                    <!-- INPUT FIELDS -->
-                    <form action="{% url 'select_fly' %}" method="POST" class="second-selection">
-                        {% csrf_token %}
+                        <div class="row">
+                            <form action="{% url 'select_fly' %}" method="POST" class="second-selection">
+                                {% csrf_token %}
+                                <div class="row">
+                                        <div class="col-sm-12 col-md-6 col-lg-3">
+                                            <label for="origin" class="form-label  mb-0 text-black fs-8 fw-bold">Origen</label>
+                                            <input list="origin_list" id="origin" name="origin" class="form-control"
+                                                onblur="hideplaces(this)" placeholder="Type to search...">
+                                            <datalist id="origin_list">
+                                                <option value="Bogota">
+                                                <option value="Cali">
+                                                <option value="Pasto">
+                                                <option value="Ibague">
+                                                <option value="Cartagena">
+                                                <option value="Pereira">
+                                            </datalist>
+                                        </div>
 
-                        <div class="d-flex align-items-center py-2 input_style">
-                            <div class="input-row col-md-3 pe-3">
-                                <label for="origin" class="form-label  mb-0 text-black fs-8 fw-bold">Origen</label>
-                                <input list="origin_list" id="origin" name="origin" class="form-control"
-                                    onblur="hideplaces(this)" placeholder="Type to search...">
-                                <datalist id="origin_list">
-                                    <option value="Bogota">
-                                    <option value="Cali">
-                                    <option value="Pasto">
-                                    <option value="Ibague">
-                                    <option value="Cartagena">
-                                    <option value="Pereira">
-                                </datalist>
-                            </div>
-                            <div class="pe-3 col-md-3">
-                                <label for="destination" class="form-label mb-0 text-black fs-8 fw-bold">Destino</label>
-                                <input list="destination_list" id="destination" name="destination" class="form-control"
-                                    placeholder="Type to search...">
-                                <datalist id="destination_list">
-                                    <option value="Bogota">
-                                    <option value="Cali">
-                                    <option value="Pasto">
-                                    <option value="Ibague">
-                                    <option value="Cartagena">
-                                    <option value="Pereira">
-                                </datalist>
-                            </div>
-                            <div class="pe-3 col-md-3">
-                                <label for="departure_date" class="form-label mb-0 text-black fs-8 fw-bold">Fecha
-                                    ida</label>
-                                {{ form.departure_date }}
-                            </div>
-                            <div class="pe-3 col-md-3">
-                                <label for="arrival_time" class="form-label mb-0 text-black fs-8 fw-bold">Fecha
-                                    Regreso</label>
-                                {{ form.arrival_time }}
-                            </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-3">
+                                            <label for="destination" class="form-label mb-0 text-black fs-8 fw-bold">Destino</label>
+                                            <input list="destination_list" id="destination" name="destination" class="form-control"
+                                                placeholder="Type to search...">
+                                            <datalist id="destination_list">
+                                                <option value="Bogota">
+                                                <option value="Cali">
+                                                <option value="Pasto">
+                                                <option value="Ibague">
+                                                <option value="Cartagena">
+                                                <option value="Pereira">
+                                            </datalist>
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-6 col-lg-3">
+                                            <label for="departure_date" class="form-label mb-0 text-black fs-8 fw-bold">Fecha
+                                                ida</label>
+                                            {{ form.departure_date }}
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-6 col-lg-3">
+                                            <label for="arrival_time" class="form-label mb-0 text-black fs-8 fw-bold">Fecha
+                                                Regreso</label>
+                                            {{ form.arrival_time }}
+                                        </div>
+                    
+                                    <div class="col-12 text-end">
+                                        <button type="submit" class="btn btn-primary mt-3">Buscar &#8594;</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="d-flex align-items-center justify-content-between pt-2">
-                            <div class="d-flex flex-column">
-                            </div>
-                            <div>
-                                <input type="submit" class="btn btn-blue fs-5 fw-bold text-white" value="Buscar">
-                                &#8594;
-                            </div>
-                        </div>
-                    </form>
-
-
-                    <!-- INPUT FIELDS END -->
-
+            
+            
+                        <!-- INPUT FIELDS END -->
+            
+            
+                    </div>
 
                 </div>
             </div>
-            <div class="col-lg-2">
-            </div>
+
         </div>
         <div class="row p-1">
             <!-- <hr> -->
             <div class="col-lg-6 note">
                 <h3>Nota:</h3>
                 <p>Fechas disponibles para prueba: 7 de mayo de 2024</p>
-                <p>Solo fecha de ida</p><p>Ruta Bogota -> Pasto.</p>
+                <p>Solo fecha de ida</p>
+                <p>Ruta Bogota -> Pasto.</p>
             </div>
+        
         </div>
     </div>
+    
+
+
 </div>
+
 <!-- LG/MD END -->
 <!-- FLIGHT/BEGIN END -->
 
