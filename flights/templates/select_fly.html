@@ -4,7 +4,7 @@
 
 {% block head %}
 <title>Document</title>
-<link rel="stylesheet" type="text/css" href="{% static 'css/select_fly.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'flight/css/select_fly.css' %}">
 {% endblock head %}
 
 {% block body %}
@@ -20,7 +20,7 @@
                         <div class="flight-origin-city">{{ flight.origin.code}}</div>
                     </div>
 
-                    <img class="auto-group-64xy-LF3" src="./img/auto-group-64xy.png"/>
+                    <img class="auto-group-64xy-LF3" src="{% static 'flight/images/shopping-cart.png' %}" />
                     <div class="opt_destination">
                         <div class="city_dest">
                             <div class="flight-destination-city">{{ flight.destination.city }}</div>
@@ -43,7 +43,7 @@
     {% else %}
         <p>No se encontraron vuelos para la búsqueda especificada.</p>
     {% endif %}
-    <script type="text/javascript" src="{% static 'js/select_fly.js' %}"></script>
+    <script type="text/javascript" src="{% static 'flight/js/select_fly.js' %}"></script>
 
 </body>
 {% endblock %}
