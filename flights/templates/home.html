@@ -40,11 +40,12 @@
                     <!-- INPUT FIELDS -->
                     <form action="{% url 'select_fly' %}" method="POST" class="second-selection">
                         {% csrf_token %}
-                      
+
                         <div class="d-flex align-items-center py-2 input_style">
                             <div class="input-row col-md-3 pe-3">
                                 <label for="origin" class="form-label  mb-0 text-black fs-8 fw-bold">Origen</label>
-                                <input list="origin_list" id="origin" name="origin" class="form-control" onblur="hideplaces(this)" placeholder="Type to search...">
+                                <input list="origin_list" id="origin" name="origin" class="form-control"
+                                    onblur="hideplaces(this)" placeholder="Type to search...">
                                 <datalist id="origin_list">
                                     <option value="Bogota">
                                     <option value="Cali">
@@ -56,7 +57,8 @@
                             </div>
                             <div class="pe-3 col-md-3">
                                 <label for="destination" class="form-label mb-0 text-black fs-8 fw-bold">Destino</label>
-                                <input list="destination_list" id="destination" name="destination" class="form-control" placeholder="Type to search...">
+                                <input list="destination_list" id="destination" name="destination" class="form-control"
+                                    placeholder="Type to search...">
                                 <datalist id="destination_list">
                                     <option value="Bogota">
                                     <option value="Cali">
@@ -67,15 +69,17 @@
                                 </datalist>
                             </div>
                             <div class="pe-3 col-md-3">
-                                <label for="departure_date" class="form-label mb-0 text-black fs-8 fw-bold">Fecha ida</label>
+                                <label for="departure_date" class="form-label mb-0 text-black fs-8 fw-bold">Fecha
+                                    ida</label>
                                 {{ form.departure_date }}
                             </div>
                             <div class="pe-3 col-md-3">
-                                <label for="arrival_time" class="form-label mb-0 text-black fs-8 fw-bold">Fecha Regreso</label>
+                                <label for="arrival_time" class="form-label mb-0 text-black fs-8 fw-bold">Fecha
+                                    Regreso</label>
                                 {{ form.arrival_time }}
                             </div>
                         </div>
-                      
+
                         <div class="d-flex align-items-center justify-content-between pt-2">
                             <div class="d-flex flex-column">
                             </div>
@@ -85,14 +89,22 @@
                             </div>
                         </div>
                     </form>
-                    
-                      
+
+
                     <!-- INPUT FIELDS END -->
 
 
                 </div>
             </div>
             <div class="col-lg-2">
+                <h3>Nota:</h3>
+                <p>Fechas disponibles para prueba: 7 de mayo de 2024</p>
+                <p>Ruta Bogota -> Pasto</p>
+            </div>
+        </div>
+        <div class="row p-5">
+            <hr>
+            <div class="col-lg-6">
                 <h3>Nota:</h3>
                 <p>Fechas disponibles para prueba: 7 de mayo de 2024</p>
                 <p>Ruta Bogota -> Pasto</p>
