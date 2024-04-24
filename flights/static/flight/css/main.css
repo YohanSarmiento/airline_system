@@ -8,7 +8,8 @@
     margin-top: 0px;
     padding-top: opx;
     /* background: url("/static/flight/images/beach.jpg") 50% 0 no-repeat fixed;  */
-    background: url("https://wallpapers.com/images/high/tropical-beach-scenes-9hnsx590dnp7y6sh.webp") 50% 0 no-repeat fixed; 
+    background: url("../images/beach.jpg") 50% 0 no-repeat fixed; 
+    /* background: url("https://wallpapers.com/images/high/tropical-beach-scenes-9hnsx590dnp7y6sh.webp") 50% 0 no-repeat fixed;  */
     background-position: center; 
     background-size: cover;}
 .btn-green{
