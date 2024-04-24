@@ -9,7 +9,7 @@
     padding-top: opx;
     background-color: #49c7ee;
     /* background: url("/static/flight/images/beach.jpg") 50% 0 no-repeat fixed;  */
-    background: url("../images/beach.jpg") 50% 0 no-repeat fixed; 
+    background: url("../images/beach2.svg") 50% 0 no-repeat fixed; 
     /* background: url("https://wallpapers.com/images/high/tropical-beach-scenes-9hnsx590dnp7y6sh.webp") 50% 0 no-repeat fixed;  */
     background-position: center; 
     background-size: cover;}
